@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Betsport24 App e Sito Mobile: Guida Android e iOS</title>
+<meta name="description" content="Scopri come usare Betsport24 da mobile: download APK Android, sito per iPhone, scommesse live, deposito, bonus e sicurezza ADM.">
+<link rel="canonical" href="https://betsport24.it.com/app/">
+<link rel="alternate" hreflang="it-it" href="https://betsport24.it.com/app/">
+<link rel="alternate" hreflang="x-default" href="https://betsport24.it.com/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  --green:#1e8a3c; --green-d:#166b2e; --green-dd:#0e4d20; --green-h:#25a049; --green-line:#1a7c35;
+  --ink:#1d2125; --mut:#6b7280; --line:#e4e7ea; --bg:#eef1f3;
+  --side:#26292e; --side2:#2e3238; --side3:#383d44; --side-line:#1f2226;
+  --odd:#3a3f46; --odd-h:#454b53; --orange:#f0a830; --yellow:#f5c518;
+  --red:#c0272d; --red-d:#9e1f24;
+  --txt-d:#cdd2d9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Roboto,system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1400px;margin:0 auto}
+
+/* Header (light, logo + inline login like the reference) */
+header{background:#f6f7f8;border-bottom:1px solid var(--line);padding:12px 18px;display:flex;align-items:center;gap:18px}
+.logo img{height:44px;width:auto}
+.head-right{margin-left:auto;display:flex;gap:10px;align-items:flex-start}
+.hfld{display:flex;flex-direction:column;gap:3px}
+.hfld input{width:150px;background:#fff;border:1px solid #c9cdd2;border-radius:5px;padding:9px 11px;font-size:13px;pointer-events:none}
+.hfld .rp{font-size:11px;color:var(--mut);font-weight:600}
+.hfld .rp:hover{color:var(--green-d)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;border-radius:6px;padding:0 18px;height:40px;cursor:pointer;border:none;font-size:14px;white-space:nowrap}
+.btn-dark{background:#17191c;color:#fff}
+.btn-dark:hover{background:#2a2d31}
+.btn-white{background:#fff;color:#17191c;border:1.5px solid #c9cdd2}
+.btn-white:hover{border-color:#17191c}
+.btn-yellow{background:var(--yellow);color:#241f00}
+.btn-yellow:hover{filter:brightness(1.06)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-h)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d)}
+
+/* Primary nav — green band like the reference */
+.nav1{background:var(--green);display:flex;gap:2px;padding:0 12px;overflow-x:auto;scrollbar-width:none}
+.nav1::-webkit-scrollbar{display:none}
+.nav1 a{padding:13px 11px;font-weight:800;color:#eaf6ee;text-transform:uppercase;font-size:12.5px;letter-spacing:.4px;white-space:nowrap;border-bottom:3px solid transparent;position:relative}
+.nav1 a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav1 a.on{color:#fff;border-bottom-color:var(--yellow)}
+.nav1 .new{position:absolute;top:4px;right:2px;background:var(--red);color:#fff;font-size:8.5px;font-weight:800;padding:1px 4px;border-radius:3px;line-height:1.2}
+.navsite{background:#fff;border-bottom:1px solid var(--line);display:flex;gap:6px;padding:9px 18px;overflow-x:auto;scrollbar-width:none}
+.navsite::-webkit-scrollbar{display:none}
+.navsite a{font-size:13px;font-weight:700;color:var(--green-d);padding:6px 12px;border-radius:6px;white-space:nowrap}
+.navsite a:hover{background:#eef6f0}
+.navsite a.on{background:var(--green);color:#fff}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:248px minmax(0,1fr) 300px;gap:14px;padding:14px 18px;align-items:start}
+
+/* Sidebar — casino typologies like the reference */
+.side{background:var(--side);border-radius:8px;overflow:hidden;color:var(--txt-d);font-size:13px}
+.side .search{padding:12px 10px}
+.side .search .lbl{font-weight:800;color:#fff;font-size:13px;margin-bottom:8px}
+.side .search input{width:100%;background:var(--side3);border:none;border-radius:6px;padding:9px 12px;color:#fff;font-size:13px}
+.side .search input::placeholder{color:#8b929b}
+.side-h{background:var(--side2);font-weight:800;text-transform:uppercase;font-size:11.5px;letter-spacing:.4px;padding:11px 12px;color:#fff;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--side-line)}
+.srow{display:flex;align-items:center;gap:9px;padding:9px 12px;border-top:1px solid var(--side-line);cursor:pointer}
+.srow:hover{background:var(--side2)}
+.srow .nm{flex:1;font-weight:600;color:#e7eaee}
+.srow .c{color:#8b929b;font-size:12px;font-variant-numeric:tabular-nums}
+.srow .ico{width:18px;height:18px;flex:none;opacity:.9}
+
+/* Center */
+.main{min-width:0;display:flex;flex-direction:column;gap:14px}
+/* Red casino banner — like the reference hero */
+.hero{background:linear-gradient(115deg,#7e1418,var(--red) 55%,#e04a37);border-radius:10px;padding:28px 30px;color:#fff;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(245,197,24,.35),transparent 70%)}
+.hero:after{content:"";position:absolute;left:40%;bottom:-90px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%)}
+.hero .kick{font-size:13px;font-weight:700;letter-spacing:.6px;opacity:.92;text-transform:uppercase}
+.hero h1{font-size:27px;font-weight:800;margin:8px 0 6px;line-height:1.15;max-width:640px;position:relative;z-index:1}
+.hero .big{color:var(--yellow);font-size:34px;display:block;margin-top:2px;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.hero p{font-size:14.5px;opacity:.95;max-width:620px;margin-bottom:16px;position:relative;z-index:1}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.card-h{background:#fff;color:#17191c;font-weight:800;text-transform:uppercase;font-size:13.5px;letter-spacing:.4px;padding:12px 16px;display:flex;align-items:center;gap:9px;border-bottom:2px solid var(--green)}
+.card-h svg{color:var(--green-d)}
+.card-h .live{margin-left:auto;font-size:11px;background:var(--green);color:#fff;padding:4px 13px;border-radius:14px;font-weight:800;cursor:pointer}
+.card-h .live:hover{background:var(--green-h)}
+.card-h.red{border-bottom-color:var(--red)}
+.card-h.red svg{color:var(--red)}
+.card-h.red .live{background:var(--red)}
+
+/* Slot tiles (постеры локально в /assets/slots/) */
+.slots{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:14px 16px}
+.slot{aspect-ratio:325/280;border-radius:8px;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:9px 10px;color:#fff;cursor:pointer;transition:transform .15s;border:1px solid rgba(0,0,0,.1);background:#1b1e23}
+.slot:hover{transform:translateY(-3px)}
+.slot img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot .nm{font-weight:800;font-size:13px;line-height:1.15;text-shadow:0 1px 6px rgba(0,0,0,.75)}
+.slot .pv{font-size:10px;opacity:.9;text-transform:uppercase;letter-spacing:.4px;text-shadow:0 1px 4px rgba(0,0,0,.7)}
+.slot .tagx{position:absolute;top:8px;left:8px;background:var(--yellow);color:#241f00;font-size:9.5px;font-weight:800;padding:2px 6px;border-radius:3px;text-transform:uppercase;z-index:1}
+.slot:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.72))}
+.slot .nm,.slot .pv{position:relative;z-index:1}
+
+/* match rows */
+.match{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);align-items:center}
+.match:last-child{border-bottom:none}
+.match .when{font-size:11.5px;color:var(--mut);font-weight:700;margin-bottom:3px;display:flex;align-items:center;gap:7px}
+.match .lg{background:#eef6f0;color:var(--green-d);border-radius:4px;padding:1px 7px;font-size:10.5px;font-weight:700}
+.match .teams{font-weight:700;font-size:14.5px}
+.match .teams .vs{color:var(--mut);font-weight:600;margin:0 6px;font-size:12px}
+.odds{display:flex;gap:6px}
+.odd{background:var(--odd);color:#fff;border-radius:6px;padding:7px 0;width:62px;text-align:center;cursor:pointer;line-height:1.1}
+.odd:hover{background:var(--odd-h)}
+.odd .k{display:block;font-size:10px;color:#aab0b8;font-weight:700;margin-bottom:2px}
+.odd .v{font-weight:800;color:var(--orange);font-size:14px}
+.qnote{padding:8px 16px;font-size:11.5px;color:var(--mut);border-top:1px solid var(--line)}
+
+/* SEO content */
+.seo{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 30px}
+.seo h2{font-size:21px;font-weight:800;margin:26px 0 12px;color:#1d2125}
+.seo h2:first-child{margin-top:0}
+.seo h3{font-size:16px;font-weight:800;margin:18px 0 8px;color:#2c333a}
+.seo p{color:#3a424b;margin-bottom:12px}
+.seo a{color:var(--green-d);font-weight:600}
+.seo a:hover{text-decoration:underline}
+.seo ul,.seo ol{margin:10px 0 14px 4px;list-style:none;color:#3a424b}
+.seo li{position:relative;padding:5px 0 5px 24px}
+.seo ul li:before{content:"";position:absolute;left:3px;top:13px;width:7px;height:7px;border-radius:2px;background:var(--green)}
+.seo ol{counter-reset:n}.seo ol li{counter-increment:n}
+.seo ol li:before{content:counter(n);position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:5px;background:#eef6f0;color:var(--green-d);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.otable{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:14px 0;font-size:13.5px}
+.otable td{padding:11px 14px;border-bottom:1px solid var(--line)}
+.otable tr:last-child td{border-bottom:none}
+.otable td:first-child{font-weight:700;width:42%;background:#f6f8f9}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.pc .col{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:#fafbfc}
+.pc h3{margin:0 0 10px;font-size:15px}
+.pc .pro h3{color:var(--green-d)}.pc .con h3{color:#d9663a}
+.pc ul{margin:0}.pc li{padding:5px 0 5px 24px;font-size:13.5px}
+.pc ul li:before{content:none}
+.pc .pro li:before{content:"✓";position:absolute;left:2px;color:var(--green-d);font-weight:800}
+.pc .con li:before{content:"–";position:absolute;left:4px;color:#d9663a;font-weight:800}
+.faq details{border:1px solid var(--line);border-radius:8px;margin-bottom:9px;overflow:hidden}
+.faq summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px;background:#fafbfc}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--green);font-weight:800;font-size:19px}
+.faq details[open] summary:after{content:"–"}
+.faq .ans{padding:12px 16px;color:#3a424b}
+.intlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.intlinks a{background:#eef6f0;color:var(--green-d);font-weight:700;font-size:13px;padding:7px 13px;border-radius:6px}
+.intlinks a:hover{background:var(--green);color:#fff}
+
+/* Right column */
+.rcard{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:14px}
+.mini-slots{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}
+.mini-slots .slot{aspect-ratio:210/200}
+.mini-slots .nm{font-size:12px}
+.promo{padding:18px 16px;text-align:center}
+.promo .lab{font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.4px}
+.promo .amt{font-size:26px;font-weight:900;margin:6px 0 2px;color:#1d2125}
+.promo .sub{font-size:13px;color:var(--mut);margin-bottom:14px}
+.appbox{padding:16px;display:flex;gap:12px;align-items:center}
+.appbox .ic{width:40px;height:40px;border-radius:9px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.appbox .t{font-weight:800;font-size:14px}.appbox .s{font-size:12px;color:var(--mut)}
+.helpbox{padding:16px;font-size:13px;color:#3a424b}
+.helpbox .row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.helpbox .row:last-child{border-bottom:none}
+.helpbox b{font-variant-numeric:tabular-nums}
+
+/* Footer */
+footer{background:var(--side);color:#aeb4bc;margin-top:18px;padding:26px 18px}
+.foot-in{max-width:1400px;margin:0 auto}
+.foot-nav{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:12px}
+.foot-nav a{color:#cdd2d9;font-weight:600;font-size:13px}
+.foot-nav a:hover{color:#fff}
+.foot-nav2{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #33373d}
+.foot-nav2 a{color:#8b929b;font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.3px}
+.foot-nav2 a:hover{color:#fff}
+.foot-pays{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.foot-pays span{background:#33373d;color:#cdd2d9;border-radius:5px;padding:6px 13px;font-size:12px;font-weight:700}
+.foot-comp{display:flex;align-items:flex-start;gap:14px;background:#1e2125;border-radius:9px;padding:14px 16px;font-size:12.5px;line-height:1.55;margin-bottom:12px}
+.foot-comp .age{flex:none;width:38px;height:38px;border-radius:50%;border:2px solid var(--orange);color:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px}
+.foot-low{font-size:12px;color:#7c828b}
+
+@media(max-width:1080px){
+  .layout{grid-template-columns:220px minmax(0,1fr)}
+  .rcol{display:none}
+  .slots{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:820px){
+  .layout{grid-template-columns:minmax(0,1fr);padding:12px}
+  .side{display:none}
+  .hero h1{font-size:22px}.hero .big{font-size:27px}
+  .pc{grid-template-columns:1fr}
+  .seo{padding:20px}
+  .match{grid-template-columns:1fr}
+  .odds{justify-content:flex-start}
+  .slots{grid-template-columns:repeat(3,1fr);gap:8px;padding:12px}
+  .hfld{display:none}
+}
+@media(max-width:480px){
+  .logo img{height:36px}
+  .head-right .btn{padding:0 12px;font-size:13px}
+  .odd{width:56px}
+  .slots{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+<style>
+.subwrap{max-width:960px;margin:0 auto;padding:14px 18px}
+.phero{background:linear-gradient(120deg,var(--green-dd),var(--green));border-radius:10px;padding:22px 26px;color:#fff;margin-bottom:14px}
+.phero .crumb{font-size:12px;color:#cfe9d8;margin-bottom:8px;font-weight:600}
+.phero .crumb a{color:#fff}
+.phero h1{font-size:24px;font-weight:800;line-height:1.2}
+.seo .tblwrap{overflow-x:auto;margin:14px 0}
+.ctabox{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;background:#eef6f0;border:1px solid #cfe9d8;border-radius:10px;padding:16px 20px;margin:18px 0}
+.ctabox .t{font-weight:800;font-size:15.5px}.ctabox .t b{color:var(--green-d)}
+.ctabox .s{font-size:12.5px;color:var(--mut)}
+.clusterFoot{display:flex;gap:8px 16px;flex-wrap:wrap;padding:18px 0 4px;border-top:1px solid var(--line);margin-top:24px}
+.clusterFoot a{color:var(--green-d);font-weight:700;font-size:13px}
+/* тематические блоки */
+.ximg{display:block;width:100%;max-width:620px;height:auto;border-radius:12px;margin:20px auto;border:1px solid var(--line);box-shadow:0 6px 16px rgba(20,40,25,.10)}
+.bigbonus{display:flex;flex-wrap:wrap;align-items:center;gap:18px;background:linear-gradient(115deg,#7e1418,var(--red) 60%,#e04a37);border-radius:12px;padding:22px 26px;color:#fff;margin:18px 0}
+.bigbonus .v{font-size:40px;font-weight:900;line-height:1}
+.bigbonus .v small{display:block;font-size:14px;font-weight:700;opacity:.9;margin-top:4px}
+.bigbonus .d{flex:1;min-width:200px;font-size:13.5px;opacity:.95}
+.bigbonus a{background:var(--yellow);color:#241f00;border-radius:8px;padding:12px 22px;font-weight:800;font-size:14px}
+.loginbox{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;max-width:420px;margin:18px 0;box-shadow:0 4px 14px rgba(20,40,25,.06)}
+.loginbox .fld{margin-bottom:12px}
+.loginbox label{display:block;font-size:12px;color:var(--mut);margin-bottom:5px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+.loginbox input{width:100%;background:#f4f6f7;border:1px solid var(--line);border-radius:7px;padding:11px 12px;font-size:14px;pointer-events:none}
+.loginbox .sub{display:block;text-align:center;background:#17191c;color:#fff;border-radius:7px;padding:12px;font-weight:800;font-size:14px;margin-top:14px}
+.loginbox .alt{text-align:center;font-size:12.5px;color:var(--mut);margin-top:10px}
+.loginbox .alt a{color:var(--green-d);font-weight:700}
+.stores{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.store{flex:1;min-width:220px;background:#fafbfc;border:1px dashed #c9cdd2;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:10px;color:var(--mut);font-size:13px}
+.store .x{color:var(--red);font-weight:900}.store .v{color:var(--green-d);font-weight:900}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.chips a{background:#eef6f0;color:var(--green-d);font-weight:700;font-size:13px;padding:8px 15px;border-radius:20px;border:1px solid #cfe9d8}
+.chips a:hover{background:var(--green);color:#fff}
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.ccard{background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center}
+.ccard .ic{width:42px;height:42px;border-radius:10px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.ccard .t{font-weight:800;font-size:14px;margin-bottom:3px}
+.ccard .v{font-size:13.5px;color:var(--green-d);font-weight:700;font-variant-numeric:tabular-nums}
+.ccard .s{font-size:12px;color:var(--mut);margin-top:4px}
+@media(max-width:700px){.contact-cards{grid-template-columns:1fr}.bigbonus .v{font-size:32px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://betsport24.it.com/"}, {"@type": "ListItem", "position": 2, "name": "App e Sito Mobile Betsport24: Guida Completa", "item": "https://betsport24.it.com/app/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "L&#x27;app Betsport24 è gratuita e legale in Italia?", "acceptedAnswer": {"@type": "Answer", "text": "Scaricarla non costa niente. Sulla legalità decide la concessione ADM: controllala nel footer del sito prima di iscriverti. Il gioco è riservato ai maggiorenni."}}, {"@type": "Question", "name": "Come si aggiorna l&#x27;app all&#x27;ultima versione?", "acceptedAnswer": {"@type": "Answer", "text": "Scarica il nuovo APK dal sito ufficiale e installalo sopra quello vecchio: dati e login restano al loro posto."}}, {"@type": "Question", "name": "Il download dell&#x27;APK non parte, che faccio?", "acceptedAnswer": {"@type": "Answer", "text": "Controlla spazio libero e connessione, abilita le origini sconosciute e riscarica il file dal sito ufficiale. Se il problema resta, cambia browser."}}, {"@type": "Question", "name": "Serve un&#x27;app diversa per iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "No: su iOS usi il sito mobile, che eventualmente aggiungi alla schermata Home da Safari come web app."}}, {"@type": "Question", "name": "Come contatto l&#x27;assistenza da mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Dalla sezione contatti del sito mobile o dell&#x27;app: di solito chat, email o modulo dedicato, senza dover passare dal desktop."}}]}</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-ball" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20m0 2a8 8 0 016.3 3.1l-2.1 1.5-2.7-2 .6-2.4q-1-.2-2.1-.2m-2.1.2.6 2.4-2.7 2-2.1-1.5A8 8 0 019.9 4.2M4.3 9.4l2 1.5-1 3-2.2.1A8 8 0 014.3 9.4M12 7l3.2 2.3-1.2 3.7H10l-1.2-3.7zm7.7 2.4a8 8 0 011.2 4.6l-2.2-.1-1-3zM7.2 14.6l2.4 0 1.3 3.6-1.8 1.4a8 8 0 01-1.9-5m9.6 0a8 8 0 01-1.9 5l-1.8-1.4 1.3-3.6z"/></symbol>
+<symbol id="i-slot" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16a2 2 0 012 2v9a2 2 0 01-2 2h-6l1 3h2v2H7v-2h2l1-3H4a2 2 0 01-2-2V6a2 2 0 012-2m1 2v9h14V6zm2 2h2v5H7zm4 0h2v5h-2zm4 0h2v5h-2z"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h9a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2m4.5 3L7 11h5zM17 6.8l1.9.5a2 2 0 011.4 2.5l-2.6 9.3a2 2 0 01-.7 1V6.8z"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2 3 6.3 6.9.9-5 4.8 1.3 6.8L12 17.6 5.8 20.8 7.1 14l-5-4.8 6.9-.9z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2m5 17a1 1 0 100 2 1 1 0 000-2M7 5v12h10V5z"/></symbol>
+<symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.57 3.6 1 1 0 01-.25 1z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 00-9 9 8.9 8.9 0 001.3 4.6L3 21l4.6-1.2A9 9 0 1012 3m-4 8h8v2H8zm0-3h8v2H8z"/></symbol>
+</defs></svg>
+<header>
+  <a class="logo" href="/" aria-label="Betsport24"><img src="/assets/logo-betsport24.png" alt="Betsport24 — sport made in Italy" width="447" height="136" style="height:44px;width:auto"></a>
+  <div class="head-right">
+    <div class="hfld"><input type="text" placeholder="Username" tabindex="-1" aria-label="Username"></div>
+    <div class="hfld"><input type="password" placeholder="Password" tabindex="-1" aria-label="Password"><a class="rp" data-aff href="/referral-link">Recupera Password</a></div>
+    <a class="btn btn-dark" data-aff href="/referral-link">Login</a>
+    <a class="btn btn-white" data-aff href="/referral-link">Registrati</a>
+  </div>
+</header>
+<nav class="nav1">
+  <a class="on" data-aff href="/referral-link">Home</a>
+  <a data-aff href="/referral-link">Scommesse</a>
+  <a data-aff href="/referral-link">Live</a>
+  <a data-aff href="/referral-link">Casino</a>
+  <a data-aff href="/referral-link">Casino Live</a>
+  <a data-aff href="/referral-link">Carte</a>
+  <a data-aff href="/referral-link">Virtuali</a>
+  <a data-aff href="/referral-link">Poker</a>
+  <a data-aff href="/referral-link">Bingo</a>
+  <a data-aff href="/referral-link">Bingo Live<span class="new">New</span></a>
+  <a data-aff href="/referral-link">Totocalcio</a>
+  <a data-aff href="/referral-link">Lotterie</a>
+  <a data-aff href="/referral-link">Ippica</a>
+  <a data-aff href="/referral-link">Promozioni</a>
+</nav>
+<nav class="navsite"><a href="/">Home</a><a href="/scommesse/">Scommesse</a><a href="/casino/">Casinò</a><a href="/accesso/">Accesso</a><a href="/app/" class="on">App</a><a href="/bonus/">Bonus</a><a href="/prelievi/">Prelievi</a><a href="/recensioni/">Recensioni</a><a href="/contatti/">Contatti</a></nav>
+<div class="subwrap">
+  <section class="phero">
+    <div class="crumb"><a href="/">Home</a> / App</div>
+    <h1>App e Sito Mobile Betsport24: Guida Completa</h1>
+  </section>
+  <article class="seo">
+
+<div class="stores"><div class="store"><span class="x">✕</span> App Store — nessuna app ufficiale Betsport24</div><div class="store"><span class="x">✕</span> Google Play — nessuna app ufficiale Betsport24</div><div class="store"><span class="v">✓</span> betsport24.it mobile — dal browser, senza installare</div></div>
+<h2>Betsport24 App e Sito Mobile: Panoramica</h2>
+<p>Vuoi scommettere dallo smartphone? Hai due strade. La prima è l&#x27;app dedicata per Android, che scarichi come file APK direttamente dal sito ufficiale; la seconda è la versione mobile responsive, che gira da qualsiasi browser aggiornato senza installare niente. L&#x27;app è tagliata su misura per chi punta spesso e vuole la bolletta a un pollice di distanza. Il sito mobile, invece, è la soluzione buona per tutti — iPhone e iPad compresi. Un consiglio prima di aprire il conto: guarda sempre nel footer se c&#x27;è la concessione ADM (ex AAMS). In Italia è la riga che separa un operatore legale da uno da lasciar perdere.</p>
+<p>Occhio a una cosa. Dopo il login, funzioni e metodi di pagamento cambiano a seconda del dispositivo e della zona in cui ti trovi. I controlli sull&#x27;età e la verifica dell&#x27;account, quelli, restano obbligatori a prescindere.</p>
+<div class="ctabox"><div><div class="t">Bonus Casino <b>100% sul primo deposito</b></div><div class="s">Licenza ADM · 18+ · si applicano termini e condizioni</div></div><a class="btn btn-red" href="/referral-link">Vai a Betsport24</a></div><h2>Come Scaricare l&#x27;App Betsport24 su Android</h2>
+<p>L&#x27;app sul Play Store non la trovi: il download passa dal sito ufficiale. La procedura è questa:</p>
+<ol><li>Apri il sito dal browser del telefono e cerca la sezione dedicata all&#x27;app.</li><li>Scarica il file APK dell&#x27;ultima versione disponibile.</li><li>Vai su Impostazioni → Sicurezza e abilita l&#x27;installazione da <b>origini sconosciute</b> (solo per il browser che stai usando).</li><li>Apri il file scaricato e conferma l&#x27;installazione.</li><li>Alla fine, spegni di nuovo il permesso per le origini sconosciute.</li></ol>
+<p>Ti servono un Android abbastanza recente e qualche decina di MB liberi. Scarica l&#x27;APK <b>solo</b> dal dominio ufficiale: i file che girano sugli aggregatori di terze parti possono essere manomessi o vecchi.</p>
+
+<img class="ximg" src="/assets/xtra-app.jpg" alt="Betsport24 mobile" loading="lazy">
+<h2>App Betsport24 per iPhone e iPad (iOS)</h2>
+<p>Sull&#x27;App Store un&#x27;applicazione dedicata non c&#x27;è. Poco male: su Safari il sito mobile copre tutto quello che ti serve. Vuoi trasformarlo in web app? Apri il sito mobile di Betsport24 da Safari, tocca l&#x27;icona di condivisione e scegli &quot;Aggiungi alla schermata Home&quot;. Ti ritrovi un&#x27;icona che apre il sito a tutto schermo, di fatto identica a un&#x27;app vera. Gira su qualsiasi iPhone o iPad con iOS aggiornato.</p>
+<h2>Sito Mobile Betsport24: Funzioni da Browser</h2>
+<p>Il sito mobile non chiede installazioni e ti dà quello che hai sul desktop: scommesse pre-match e live, gestione del conto, depositi e prelievi, contatto con l&#x27;assistenza. Il bello? Va con tutto — Chrome, Safari, Firefox — e non ti mangia un byte di memoria. Se giochi su più dispositivi, è pure la via più veloce per il login.</p>
+
+<div class="chips"><a href="/referral-link">Scommesse mobile</a><a href="/referral-link">Casinò mobile</a><a href="/referral-link">Live</a><a href="/referral-link">Schedina</a></div>
+<h2>Scommesse Sportive e Live da Mobile</h2>
+<p>Il palinsesto batte i mercati che interessano allo scommettitore italiano: calcio (Serie A, Champions, campionati minori), tennis, basket, poi qualche disciplina di nicchia ed eSport dove ci sono. Le funzioni che contano, quando l&#x27;operatore le mette a disposizione:</p>
+<ul><li><b>Live betting</b> con quote che si muovono in tempo reale</li><li><b>Cash out</b> per chiudere la giocata prima del triplice fischio</li><li><b>Multiple e sistemi</b></li><li><b>Bet builder</b>, così combini più esiti dello stesso match</li></ul>
+
+<div class="ctabox"><div><div class="t">Bonus Casino <b>100% sul primo deposito</b></div><div class="s">Licenza ADM · 18+ · si applicano termini e condizioni</div></div><a class="btn btn-red" href="/referral-link">Vai a Betsport24</a></div>
+<h2>Registrazione, Login e Deposito da App</h2>
+<p>Aprire il conto dallo smartphone è questione di pochi minuti: dati anagrafici, <b>codice fiscale</b> e caricamento di un documento d&#x27;identità per la verifica KYC che la normativa italiana pretende. Convalidato il conto, il login viaggia protetto dalle tue credenziali personali. Per ricaricare in genere trovi carte Visa/Mastercard, PayPal, Skrill e bonifico bancario, con depositi minimi che di solito si aggirano sui 10 €. Dai un&#x27;occhiata in cassa ai limiti esatti di ogni metodo, perché possono cambiare.</p>
+<h2>Bonus e Promozioni per Utenti Mobile</h2>
+<p>Il bonus di benvenuto lo attivi anche da app e sito mobile: importo, rollover e quota minima richiesta stanno scritti nei termini ufficiali, e leggerli prima di depositare conviene parecchio — occhio soprattutto alla scadenza entro cui completare il rollover. Durante la stagione spuntano anche promo ricorrenti su Serie A e sui grandi eventi. Nessun bonus ti garantisce di vincere: gioca sempre con la testa.</p>
+<h2>App vs Sito Mobile: Quale Scegliere</h2>
+<div class="tblwrap"><table class="otable"><tr><td><b>Criterio</b></td><td><b>App (APK Android)</b></td><td><b>Sito Mobile</b></td></tr><tr><td>Velocità</td><td>Ottima, interfaccia nativa</td><td>Buona, dipende dal browser</td></tr><tr><td>Notifiche push</td><td>Sì</td><td>No</td></tr><tr><td>Memoria occupata</td><td>Alcune decine di MB</td><td>Zero</td></tr><tr><td>Aggiornamenti</td><td>Manuali (nuovo APK)</td><td>Automatici</td></tr><tr><td>Compatibilità</td><td>Solo Android</td><td>Android, iOS, tablet</td></tr></table></div>
+<p>Riassumendo: Android e giochi tutti i giorni → app. iPhone o partita ogni tanto → sito mobile.</p>
+<h2>Domande Frequenti (FAQ)</h2>
+<div class="faq"><details><summary>L&#x27;app Betsport24 è gratuita e legale in Italia?</summary><div class="ans">Scaricarla non costa niente. Sulla legalità decide la concessione ADM: controllala nel footer del sito prima di iscriverti. Il gioco è riservato ai maggiorenni.</div></details></div>
+<div class="faq"><details><summary>Come si aggiorna l&#x27;app all&#x27;ultima versione?</summary><div class="ans">Scarica il nuovo APK dal sito ufficiale e installalo sopra quello vecchio: dati e login restano al loro posto.</div></details></div>
+<div class="faq"><details><summary>Il download dell&#x27;APK non parte, che faccio?</summary><div class="ans">Controlla spazio libero e connessione, abilita le origini sconosciute e riscarica il file dal sito ufficiale. Se il problema resta, cambia browser.</div></details></div>
+<div class="faq"><details><summary>Serve un&#x27;app diversa per iPhone?</summary><div class="ans">No: su iOS usi il sito mobile, che eventualmente aggiungi alla schermata Home da Safari come web app.</div></details></div>
+<div class="faq"><details><summary>Come contatto l&#x27;assistenza da mobile?</summary><div class="ans">Dalla sezione contatti del sito mobile o dell&#x27;app: di solito chat, email o modulo dedicato, senza dover passare dal desktop.</div></details></div>
+  </article>
+  <div class="clusterFoot"><a href="/">Home</a><a href="/scommesse/">Scommesse</a><a href="/casino/">Casinò</a><a href="/accesso/">Accesso</a><a href="/app/">App</a><a href="/bonus/">Bonus</a><a href="/prelievi/">Prelievi</a><a href="/recensioni/">Recensioni</a><a href="/contatti/">Contatti</a></div>
+</div>
+<footer>
+  <div class="foot-in">
+    <div class="foot-nav">
+      <a href="/">Home</a>
+      <a href="/scommesse/">Scommesse</a>
+      <a href="/casino/">Casinò</a>
+      <a href="/accesso/">Accesso</a>
+      <a href="/app/">App</a>
+      <a href="/bonus/">Bonus</a>
+      <a href="/recensioni/">Recensioni</a>
+      <a href="/contatti/">Contatti</a>
+    </div>
+    <div class="foot-nav2">
+      <a data-aff href="/referral-link">Scommesse</a>
+      <a data-aff href="/referral-link">Live</a>
+      <a data-aff href="/referral-link">Casino</a>
+      <a data-aff href="/referral-link">Casino Live</a>
+      <a data-aff href="/referral-link">Poker</a>
+      <a data-aff href="/referral-link">Bingo</a>
+      <a data-aff href="/referral-link">Totocalcio</a>
+      <a data-aff href="/referral-link">Lotterie</a>
+      <a data-aff href="/referral-link">Ippica</a>
+      <a data-aff href="/referral-link">Virtuali</a>
+    </div>
+    <div class="foot-pays">
+      <span>VISA</span><span>Mastercard</span><span>PostePay</span><span>Bonifico</span><span>Punto vendita</span>
+    </div>
+    <div class="foot-comp">
+      <span class="age">18+</span>
+      <span>Il gioco è vietato ai minori di 18 anni e può causare dipendenza patologica. Gioca responsabilmente. Betsport24 opera con licenza ADM (Agenzia delle Dogane e dei Monopoli). Le quote mostrate sono indicative. Sito informativo indipendente.</span>
+    </div>
+    <div class="foot-low">© 2026 Betsport24 · Sport made in Italy · Gioca responsabilmente</div>
+  </div>
+</footer>
+</body>
+</html>
